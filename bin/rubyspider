@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'RubySpider'
+require 'slop'
+
+@opts = Slop.parse do |o|
+  # o.banner 'Usage: rubyspider --target targetname'
+  o.string '-m', '--mode', 'Mode which to run in, defaults to spider'
+  o.string '-t', '--target', 'Specify the target url to act on'
+  o.on '-h', '--help', 'Shows the helpful stuff' do
+    puts ''
+    puts %q{______      _           _____       _     _           }
+    puts %q{| ___ \    | |         /  ___|     (_)   | |          }
+    puts %q{| |_/ /   _| |__  _   _\ `--. _ __  _  __| | ___ _ __ }
+    puts %q{|    / | | | '_ \| | | |`--. \ '_ \| |/ _` |/ _ \ '__|}
+    puts %q{| |\ \ |_| | |_) | |_| /\__/ / |_) | | (_| |  __/ |   }
+    puts %q{\_| \_\__,_|_.__/ \__, \____/| .__/|_|\__,_|\___|_|   }
+    puts %q{                   __/ |     | |                      }
+    puts %q{                  |___/      |_|                      }
+    puts ''
+    puts 'RubySpider is a webspider designed to analyze and build very minimal json objects of a website.'
+    puts '  These json objects can then be used to generate basic selenium testing templates, usable'
+    puts '  by any selenium webrunner.'
+    puts ''
+    puts 'To Run'
+    puts 'rubyspider -t targeturl'
+    puts '  -t or --target allows specification of which url to run again to generate data.'
+  end
+end
